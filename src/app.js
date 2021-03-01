@@ -6,6 +6,7 @@ const helmet = require('helmet')
 const { NODE_ENV, CLIENT_ORIGIN } = require('./config')
 const validateBearerToken = require('./validate-bearer-token')
 const forecastsRouter = require('./forecasts/forecasts-router')
+const cardsRouter = require('./cards/cards-router')
 
 const app = express()
 
@@ -28,6 +29,7 @@ app.get('/', (req, res) => {
 })
 
 app.use(forecastsRouter)
+app.use(cardsRouter)
 
 // error handling middleware 
 app.use(function errorHandler(error, req, res, next) {

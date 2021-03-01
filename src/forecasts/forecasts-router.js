@@ -19,7 +19,7 @@ const serializeForecast = forecast => ({
 })
 
 forecastsRouter
-  .route('/api')
+  .route('/forecasts')
 
   .post(bodyParser, (req, res, next) => {
     const { 
@@ -47,14 +47,14 @@ forecastsRouter
         logger.info(`Forecast with id ${id} created`)
         res
           .status(201)
-          .location(`http://localhost:8000/api/${id}`)
+          .location(`http://localhost:8000/forecasts/${id}`)
           .json(forecast)
       })
       .catch(next)
   })
 
 forecastsRouter
-  .route('/api/:forecast_id')
+  .route('/forecasts/:forecast_id')
 
   .all((req, res, next) => {
     const { forecast_id } = req.params
