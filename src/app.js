@@ -23,11 +23,6 @@ app.use(
 )
 app.use(validateBearerToken)
 
-// endpoint
-app.get('/', (req, res) => {
-  res.send('Hello, world!')
-})
-
 app.use(forecastsRouter)
 app.use(cardsRouter)
 
