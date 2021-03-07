@@ -14,13 +14,17 @@ const morganOption = (NODE_ENV === 'production')
   ? 'tiny'
   : 'common';
 
+var corsOptions = {
+  origin: CLIENT_ORIGIN,
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204,
+
+}
 app.use(morgan(morganOption))
 app.use(helmet())
 app.use(
-  cors({
-      origin: CLIENT_ORIGIN
-  })
+  cors(corsOptions)
 )
+app.options('*', cors())
 app.use(validateBearerToken)
 
 app.use(forecastsRouter)
