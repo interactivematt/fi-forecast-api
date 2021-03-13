@@ -8,7 +8,8 @@ const cardsService = require('./cards-service')
 
 const serializeCard = card => ({
   title: xss(card.title),
-  content: xss(card.content)
+  content: xss(card.content), 
+  icon: xss(card.icon)
 })
 
 cardsRouter
