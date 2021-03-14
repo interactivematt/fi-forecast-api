@@ -1,3 +1,16 @@
-# FI-Forecast Server
+# fi-forecast-api
 
-Server code for FI-Forecast project.
+### REST API for [fi-forecast](https://fi-forecast.vercel.app/) that provides access to information.
+
+#### Methods:
+`GET` | `POST`
+
+#### Success responses:
+`200`
+
+#### Technology used:
+- Node.js
+- Express
+- Knex
+- Heroku
+- PostgreSQL
